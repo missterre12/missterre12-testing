@@ -1,0 +1,15 @@
+No. 1
+SELECT max(gaji) FROM kawahedukasi  ORDER BY gaji  ;
+
+No. 2
+SELECT id, nama, kelas, nilai, jumlah_kehadiran, status_kelulusan, status_pekerjaan, gaji
+FROM kawahedukasi.kawahedukasi
+WHERE gaji=( SELECT max(gaji) FROM kawahedukasi) ;
+
+No. 3
+SELECT count(kelas) FROM kawahedukasi WHERE kelas ="FRONTEND"
+
+No. 4
+SELECT id, nama, kelas, nilai, jumlah_kehadiran, status_kelulusan, status_pekerjaan, gaji
+FROM kawahedukasi.kawahedukasi
+WHERE nilai=( SELECT max(nilai) FROM kawahedukasi) AND jumlah_kehadiran=( SELECT max(jumlah_kehadiran) FROM kawahedukasi) ;
